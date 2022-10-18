@@ -2,10 +2,12 @@
 pipeline {
     agent any
     stages {
-        stage('Hello Stage') {
+        stage('Single Stage') {
             steps {
-                sh 'echo Hello World'
-                echo "Build #${currentBuild.number}"
+                sh 'echo Single Stage running..!'
+                echo "Build number is: #${currentBuild.number}"
+                sh 'ls -alt'
+                echo env.BRANCH_NAME
             }
         }
     }
