@@ -5,9 +5,10 @@ pipeline {
         stage('Single Stage') {
             steps {
                 sh 'echo Single Stage running..!'
-                echo "Build number is: #${currentBuild.number}"
+                echo "Branch ${env.BRANCH_NAME}"
+                echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
+                echo "Current Build number is: #${currentBuild.number}"
                 sh 'ls -alt'
-                echo env.BRANCH_NAME
             }
         }
     }
