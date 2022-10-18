@@ -1,0 +1,12 @@
+#!/usr/bin/env groovy
+pipeline {
+    agent any
+    stages {
+        stage('Hello Stage') {
+            steps {
+                sh 'echo Hello World'
+                echo "Build #${currentBuild.number}"
+            }
+        }
+    }
+}
