@@ -11,7 +11,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Test Step!'
-                echo BRANCH_NAME
+                echo env.BRANCH_NAME
             }
         }
         stage('Deploy') {
