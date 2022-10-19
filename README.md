@@ -11,4 +11,7 @@ Trying Pipeline configurations, plugins, etc
 - sh '...'
 - echo "..."
 - junit '...'
-- 
+
+### Credentials
+- Declarative Pipeline syntax has the **_credentials()_** helper method (used within the **_environment_** directive)
+- It supports **_secret text_**, **_username and password_**, as well as **_secret file_** credentials

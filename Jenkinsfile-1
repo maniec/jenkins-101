@@ -2,6 +2,15 @@
 pipeline {
     agent any
     stages {
+        environment {
+            withCredentials([certificate(
+                    aliasVariable: '',
+                    credentialsId: 'jenkins-certificate-for-xyz',
+                    keystoreVariable: 'CERTIFICATE_FOR_XYZ',
+                    passwordVariable: 'XYZ-CERTIFICATE-PASSWORD')]) {
+                // some block
+            }
+        }
         stage('Single Stage') {
             steps {
                 sh 'echo Single Stage running..!'
